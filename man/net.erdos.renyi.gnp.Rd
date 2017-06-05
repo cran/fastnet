@@ -19,7 +19,7 @@ net.erdos.renyi.gnp(n, p, ncores = detectCores(), d = TRUE)
 A list containing the nodes of the network and their respective neighbors.
 }
 \description{
-Simulate a random network with \emph{n} nodes and a link connecting probability of \emph{p}, according to Erdos and Renyi (1959).
+Simulate a random network with \emph{n} nodes and a link connecting probability of \emph{p}, according to Edos and Renyi (1959).
 }
 \details{
 In this (simplest) random network, each edge is formed at random with a constant probability.

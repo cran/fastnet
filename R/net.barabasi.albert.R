@@ -68,7 +68,7 @@ net.barabasi.albert <- function(n, m, ncores = detectCores(), d = FALSE ){
           Net1[new.edge] <- Net2
           Net1[i] <- list(sort(new.edge))
           n.init <- c(n.init, i)
-          }
+        }
 
         Net1
       }
@@ -94,20 +94,26 @@ net.barabasi.albert <- function(n, m, ncores = detectCores(), d = FALSE ){
 
         }
 
+        if (n < ncores) {
+
+          ncores = n
+
+        } else { }
+
         cl <- makeCluster(ncores) ##Make cluster of cores
         on.exit(stopCluster(cl))
         registerDoParallel(cl, cores = ncores)
 
-        reverse.connect = function(i){
+        reverse.connect <- function(i){
 
-          reverse.neilist =list()
-          reverse.neilist[n] = list(NULL)
+          reverse.neilist <- list()
+          reverse.neilist[n] <- list(NULL)
 
           for (j in seq(i,n,ncores)  ){
 
             for (k in neilist[[j]]){
 
-              reverse.neilist[[k]] = c(reverse.neilist[[k]],j)
+              reverse.neilist[[k]] <- c(reverse.neilist[[k]],j)
 
             }
 
@@ -130,9 +136,3 @@ net.barabasi.albert <- function(n, m, ncores = detectCores(), d = FALSE ){
     }
   }
 }
-
-
-
-
-
-
