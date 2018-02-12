@@ -2,7 +2,7 @@
 % Please edit documentation in R/from.igraph.R
 \name{from.igraph}
 \alias{from.igraph}
-\title{Transform Network from \code{igraph}  to \code{fastnet} Format}
+\title{Transform an \code{igraph} object to a \code{fastnet} object}
 \usage{
 from.igraph(net.igraph)
 }
@@ -13,10 +13,7 @@ from.igraph(net.igraph)
 A list containing the nodes of the network and their respective neighbors.
 }
 \description{
-Transform \code{igraph} object to an ego-centric list form used in \code{fastnet}.
-}
-\details{
-Masked from \code{igraph::as_adj_list}.
+Transform an \code{igraph} object to an ego-centric list form used in \code{fastnet}.
 }
 \examples{
 \dontrun{

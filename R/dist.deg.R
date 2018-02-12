@@ -11,7 +11,6 @@
 #' summary(x.dist.deg)}
 #' @export
 
-
 dist.deg <- function(net){
 
   lengths(net)

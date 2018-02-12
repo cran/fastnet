@@ -13,11 +13,11 @@
 from.adjacency <- function (adj.mat){
 
   if (!is.matrix(adj.mat)) stop("Parameter 'adj.mat' must be a matrix", call. = FALSE)
-
-  net <- igraph::as_adj_list( igraph::graph_from_adjacency_matrix(adj.mat), mode = "out" )
-
-   net
+  net <- lapply( igraph::as_adj_list( igraph::graph_from_adjacency_matrix(adj.mat), mode = "out" ),
+                 as.numeric ) ## use as.numeric to remove the "igraph.vs" class
+  net
 }
+
 
 
 

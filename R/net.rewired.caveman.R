@@ -27,7 +27,7 @@ net.rewired.caveman <- function( nc, m, p){
     nei =list()
     nei[n] <- list(NULL)
 
-    for (j in seq(i,n,Cores)  ){
+    for (j in seq(i,n,ncores)  ){
 
       if ( j%%m != 0) {
 
@@ -78,19 +78,19 @@ net.rewired.caveman <- function( nc, m, p){
     cc
   }
 
-  Cores <- detectCores()
-  cl <- makeCluster(Cores)
-  registerDoParallel(cl, cores=Cores)
+  ncores <- detectCores()
+  cl <- makeCluster(ncores)
+  registerDoParallel(cl, cores=ncores)
 
   i <- NULL
-  neilist <- foreach(i = 1:Cores, .combine='cfun') %dopar% edge.to.nei(i)
+  neilist <- foreach(i = 1:ncores, .combine='cfun') %dopar% edge.to.nei(i)
 
   reverse.connect <- function(i){
 
     reverse.neilist =list()
     reverse.neilist[n] <- list(NULL)
 
-    for (j in seq(i,n,Cores)  ){
+    for (j in seq(i,n,ncores)  ){
 
       for (k in neilist[[j]]){
 
@@ -109,7 +109,7 @@ net.rewired.caveman <- function( nc, m, p){
     cc
   }
   i <- NULL
-  reverselist <- foreach(i=1:Cores, .combine='cfun') %dopar% reverse.connect(i)
+  reverselist <- foreach(i=1:ncores, .combine='cfun') %dopar% reverse.connect(i)
 
   Network <- mapply(c,neilist,reverselist, SIMPLIFY=FALSE)
   stopCluster(cl)

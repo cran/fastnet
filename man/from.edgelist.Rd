@@ -7,21 +7,21 @@
 from.edgelist(edgelist)
 }
 \arguments{
-\item{edgelist}{The edge list, a vector with even number of entries.}
+\item{edgelist}{A 2-column data frame, in which the 1st column represents the start nodes, and the 2nd column represents the destination nodes.}
 }
 \value{
 A list containing the nodes of the network and their respective neighbors.
 }
 \description{
-Transfer an edgelist to an ego-centric list form used in \code{fastnet}.
+Transform an edgelist to an ego-centric list form used in \code{fastnet}.
 }
 \details{
-The \emph{n} nodes are placed on a circle and each node is connected to the nearest \emph{k} neighbors.
+Most network data repositories choose to store the data in an edgelist form. This function helps user to load it in \code{fastnet}.
 }
 \examples{
-edgelist <- c(1, 3, 2, 3, 3, 4, 5, 6,5,7)
+edgelist <- data.frame(from=c(1, 3, 2, 3, 3), to=c(4, 5, 6, 5, 7))
 g <- from.edgelist(edgelist)
 }
 \author{
-Xu Dong, Christian Llano.
+Xu Dong
 }
