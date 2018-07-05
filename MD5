@@ -1,11 +1,9 @@
-db5ae379fb37e4a5e1928dee0554065d *DESCRIPTION
-1e9cd1bd11181bb2ab6791225692951a *NAMESPACE
-a5753a1ab5dc7cbfd71681c8cad1c210 *NEWS.md
-690306867c07847557ed0869982b6913 *R/dist.deg.R
-43c5b66a8991adfaf3465dfe4a28c906 *R/draw.degdist.R
-ae569b2962086ce34783760afa8541f3 *R/draw.degdist.cum.R
-4d70235b2d2d4f4b39b2b5ffd0c497b6 *R/draw.degdist.cum.log.R
-b1da91043f84411cad8b9b496564d3d3 *R/draw.degdist.log.R
+eaf2683d22c19998bba00d9f5cf9b602 *DESCRIPTION
+30fef3880abd4b78b1983f876307ca1a *NAMESPACE
+b0cc22bfbe6904d90d4ade7b2d894150 *NEWS.md
+2ef2b0f3b72d49b34456f9de5aca1391 *R/degree.collect.R
+b3c0f6b30acb712c3fada04d96001f03 *R/degree.dist.R
+483168997570851f813171b9d518385f *R/degree.hist.R
 8aa718f6dbf903d0418aebb48e176031 *R/draw.net.R
 67a889da20aed9131af53bef20d9d9d4 *R/from.adjacency.R
 c5cf0fdf73d37086384dcd439c31fab3 *R/from.csc.R
@@ -13,7 +11,6 @@ dd15a850db5a46a9a6597384e04388db *R/from.csr.R
 02a6fd9e1b2a9ab15aeeb568b792bd68 *R/from.edgelist.R
 ca74c8a1c2aa98d31c89a31d44cbf78c *R/from.igraph.R
 245c2571871ddf34cac903be22fc413d *R/from.statnet.R
-c35186468f4d7c6fb4e7c50913ed4ec3 *R/histo.dist.R
 0818992cb59bf3e7a59394e2ba57413c *R/metric.cluster.global.R
 37d8eb3fb77688c919a8cad994134697 *R/metric.cluster.mean.R
 6da36c404d9bda2e715e045d6e0e5320 *R/metric.cluster.median.R
@@ -35,7 +32,7 @@ c37cf033048367ffcf4161c53e406a3f *R/metric.degree.max.R
 1fef81e8dd82ff7f7c101d6e74d475ce *R/metric.eigen.median.R
 2af25310891161cabe25a229eec4e263 *R/metric.eigen.value.R
 1da1f9540a857f8df2a1c9da252f92dc *R/metric.graph.density.R
-87e027741e9fd08fb30522a69cc420fd *R/neighbors.R
+1fea2aa69f2213a8df139eab0b47efa4 *R/neighbors.R
 001e018c0929544f66df22d2d8153341 *R/net.barabasi.albert.R
 32c78bb0c7d5ef8965f481b6b5b04b5d *R/net.caveman.R
 5f3e439b16974d18b1733c072e598e98 *R/net.complete.R
@@ -51,11 +48,9 @@ cc81f3bb5f114bf6a2c4ad73b14d0694 *R/preview.net.R
 3b3b5ca16049cb410218ba1704d8b9c8 *R/to.edgelist.R
 7ad6e0a6e48bafb54b0be6eacc4727df *R/to.igraph.R
 b223433831bda6f1305c899740d0bd9e *R/to.tidygraph.R
-cd7b9a1549ae10beee43f8b376ef64f0 *man/dist.deg.Rd
-b25337c120a1f3e90a11ff5883085a24 *man/draw.degdist.Rd
-bee2788bf48acb95d967dc120ecf0d71 *man/draw.degdist.cum.Rd
-2509e8ddb9ff23b8d289a4c305b831e7 *man/draw.degdist.cum.log.Rd
-857ea0a199e46fe9ba2c49345e3b08b3 *man/draw.degdist.log.Rd
+cac96e661cb7b52f76b3775710fb9c92 *man/degree.collect.Rd
+147594c7a0c1a7bf1b5a5809423e25a4 *man/degree.dist.Rd
+ad674d11e7157e8776f8021751ba72a4 *man/degree.hist.Rd
 f0620b70fd18aa388f500f80ce3598d5 *man/draw.net.Rd
 01c8e97c3278cf12cbd763bc326c4e83 *man/from.adjacency.Rd
 9e3b5a7846468bcedf35d61a0ec12e59 *man/from.csc.Rd
@@ -63,7 +58,6 @@ f1ef05290e6e61be57f088bfe0847441 *man/from.csr.Rd
 e716b4438f8018e35054cc919ef2099d *man/from.edgelist.Rd
 b366163d2262e53dba859cf00c801c57 *man/from.igraph.Rd
 c1c300fffc5a8e9bd778613e40e95ced *man/from.statnet.Rd
-42446bb9fdd155f6b012a74d865c4156 *man/histo.dist.Rd
 a7c153fc448142c9a9d2e2f9b0d12a0b *man/metric.cluster.global.Rd
 f053d61a552703ff93d6716c23987907 *man/metric.cluster.mean.Rd
 8eecfe410f4eabef6a296addca02b147 *man/metric.cluster.median.Rd
@@ -85,7 +79,7 @@ fdcf4642f728f86880e79dce1ae1c496 *man/metric.distance.mpl.Rd
 0a7fdc518b4bfab23a5a2ada6b3e81a7 *man/metric.eigen.median.Rd
 9407fa41f757348ad8904bb8b72d46c7 *man/metric.eigen.value.Rd
 85e69fe0c7b7b4398cf1455efefcbcf3 *man/metric.graph.density.Rd
-df7f2ddd80287a90c87f692ddb6a334f *man/neighbors.Rd
+dd5a65038d3472dfa7d54914a0f0e64d *man/neighbors.Rd
 c7e2ae4627dc4872b34490a6f0918153 *man/net.barabasi.albert.Rd
 d6575d3b4896f6992435875ed5b535ba *man/net.caveman.Rd
 bfb880c0ed88790635962eee58eef6ba *man/net.complete.Rd

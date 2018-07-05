@@ -1,5 +1,13 @@
 # News
 
+## 0.1.5
+* draw.degdist.cum.log() is deprecated, use degree.dist(cumulative = TRUE, log = TRUE) instead
+* draw.degdist.cum() is deprecated, use degree.dist(cumulative = TRUE, log = FALSE) instead
+* draw.degdist.log() is deprecated, use degree.dist(cumulative = FALSE, log = TRUE) instead
+* draw.degdist() is deprecated, use degree.dist(cumulative = FALSE, log = FALSE) instead 
+* histo.dist() is deprecated, use degree.hist() instead
+* dist.deg() is deprecated, use degree.collect() instead
+
 ## 0.1.4
 * Fix the consistancy issue when presenting a fastnet network object by removing the ‘igraph.vs’ class from the output for the function "from.adjacency" and "from.igraph"
 * Elaborate the example and the statements of the “parameters” and “details” in the "from.edgelist" documentation

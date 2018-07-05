@@ -2,20 +2,20 @@
 % Please edit documentation in R/neighbors.R
 \name{neighbors}
 \alias{neighbors}
-\title{neighbors of an agent in a network}
+\title{Neighbors of an agent in a network}
 \usage{
-neighbors(net, node)
+neighbors(net, NodeID)
 }
 \arguments{
 \item{net}{The input network.}
 
-\item{node}{The input node.}
+\item{NodeID}{The ID of the input node.}
 }
 \value{
 A vector.
 }
 \description{
-Present all neighbors of a give agent in a network.
+Presents all neighbors of a given node.
 }
 \details{
 Neighbors of a node are nodes that directly connects to this node.
@@ -26,5 +26,5 @@ x <-  net.ring.lattice(12,4)
 neighbors(x,2)}
 }
 \author{
-Xu Dong, Nazrul Shaikh.
+Xu Dong
 }
