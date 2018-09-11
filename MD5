@@ -1,13 +1,11 @@
-eaf2683d22c19998bba00d9f5cf9b602 *DESCRIPTION
-30fef3880abd4b78b1983f876307ca1a *NAMESPACE
-b0cc22bfbe6904d90d4ade7b2d894150 *NEWS.md
+61d372aa9b7e94df2b95a452ffe5638a *DESCRIPTION
+b3db75f13f4d7548253fa969ada099bb *NAMESPACE
+b0e3ab3cb5d584a52c1390b363ec4901 *NEWS.md
 2ef2b0f3b72d49b34456f9de5aca1391 *R/degree.collect.R
 b3c0f6b30acb712c3fada04d96001f03 *R/degree.dist.R
 483168997570851f813171b9d518385f *R/degree.hist.R
 8aa718f6dbf903d0418aebb48e176031 *R/draw.net.R
 67a889da20aed9131af53bef20d9d9d4 *R/from.adjacency.R
-c5cf0fdf73d37086384dcd439c31fab3 *R/from.csc.R
-dd15a850db5a46a9a6597384e04388db *R/from.csr.R
 02a6fd9e1b2a9ab15aeeb568b792bd68 *R/from.edgelist.R
 ca74c8a1c2aa98d31c89a31d44cbf78c *R/from.igraph.R
 245c2571871ddf34cac903be22fc413d *R/from.statnet.R
@@ -53,8 +51,6 @@ cac96e661cb7b52f76b3775710fb9c92 *man/degree.collect.Rd
 ad674d11e7157e8776f8021751ba72a4 *man/degree.hist.Rd
 f0620b70fd18aa388f500f80ce3598d5 *man/draw.net.Rd
 01c8e97c3278cf12cbd763bc326c4e83 *man/from.adjacency.Rd
-9e3b5a7846468bcedf35d61a0ec12e59 *man/from.csc.Rd
-f1ef05290e6e61be57f088bfe0847441 *man/from.csr.Rd
 e716b4438f8018e35054cc919ef2099d *man/from.edgelist.Rd
 b366163d2262e53dba859cf00c801c57 *man/from.igraph.Rd
 c1c300fffc5a8e9bd778613e40e95ced *man/from.statnet.Rd

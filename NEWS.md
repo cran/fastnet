@@ -1,5 +1,9 @@
 # News
 
+## 0.1.6 (2018-09-10)
+* from.csc() is deprecated
+* from.csr() is deprecated
+
 ## 0.1.5
 * draw.degdist.cum.log() is deprecated, use degree.dist(cumulative = TRUE, log = TRUE) instead
 * draw.degdist.cum() is deprecated, use degree.dist(cumulative = TRUE, log = FALSE) instead
