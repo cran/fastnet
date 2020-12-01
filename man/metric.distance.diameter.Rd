@@ -4,8 +4,13 @@
 \alias{metric.distance.diameter}
 \title{Diameter}
 \usage{
-metric.distance.diameter(Network, probability = 0.95, error = 0.03,
-  Cores = detectCores(), full = TRUE)
+metric.distance.diameter(
+  Network,
+  probability = 0.95,
+  error = 0.03,
+  Cores = detectCores(),
+  full = TRUE
+)
 }
 \arguments{
 \item{Network}{The input network.}

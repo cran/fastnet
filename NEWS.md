@@ -1,5 +1,13 @@
 # News
 
+## 1.0.0 (2020-11-30)
+* Resolved a scalablity issue in metric.distance.apl()
+* Added random seed as an optional argument of net.erdos.renyi.gnp()
+* Added random seed as an optional argument of net.rewired.caveman()
+* Added Degree-Constraint network generation algorithm 
+* Added Cluster-Affiliation network generation algorithm
+* Added JSS citation information
+
 ## 0.1.6 (2018-09-10)
 * from.csc() is deprecated
 * from.csr() is deprecated

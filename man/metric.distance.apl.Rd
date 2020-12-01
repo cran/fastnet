@@ -4,8 +4,13 @@
 \alias{metric.distance.apl}
 \title{Average Path Length}
 \usage{
-metric.distance.apl(Network, probability = 0.95, error = 0.03,
-  Cores = detectCores(), full.apl = FALSE)
+metric.distance.apl(
+  Network,
+  probability = 0.95,
+  error = 0.03,
+  Cores = detectCores(),
+  full.apl = FALSE
+)
 }
 \arguments{
 \item{Network}{The input network.}

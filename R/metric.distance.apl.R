@@ -37,16 +37,17 @@
 
 
 metric.distance.apl <-  function(Network,probability=0.95,error=0.03,
-                              Cores=detectCores(), full.apl=FALSE){
+                                 Cores=detectCores(), full.apl=FALSE){
 
   if (!is.list(Network)) stop("Parameter 'Network' must be a list", call. = FALSE)
   if (probability>=1 | probability<=0) stop("Parameter 'probability' must be in (0,1)", call. = FALSE)
   if (error>1 | error<0) stop("Parameter 'error' must be in [0,1]", call. = FALSE)
-  if (Cores <= 0 | Cores > detectCores() | Cores%%1!=0) stop("Parameter 'Cores' must be a positive integer number greater than one and less available cores",call. = FALSE)
+  if (Cores <= 0 | Cores%%1!=0) stop("Parameter 'Cores' must be a positive integer number",call. = FALSE)
+  if (Cores > detectCores()) stop("Parameter 'Cores' exceeds the max number of available cores",call. = FALSE)
   if (!is.logical(full.apl)) stop("Parameter 'full.ap' must be logical", call. = FALSE)
   if (0 %in% lengths(Network)) stop("The network object contains isolated nodes", call = FALSE)
 
-      ##//Inner function SPL by edeges
+  ##//Inner function SPL by edeges
 
 
   Shortest.path.big <- function(matrix.edges,network){
@@ -92,11 +93,12 @@ metric.distance.apl <-  function(Network,probability=0.95,error=0.03,
         }
 
         if (r1==0){
-          neig <- unlist(Network[neig])
+          neig <- unique(unlist(Network[neig]))
           r1 <- which(neig==dest)
           r1 <- length(r1)
           sp <- sp+1
         }
+
       }
       sp
     }
@@ -109,7 +111,7 @@ metric.distance.apl <-  function(Network,probability=0.95,error=0.03,
 
 
   ##//Sample nodes
-
+  set.seed(0)
   #Get 1000 of SP for st dev calculation for sampling
   N <- length(Network)
   s <- round(1000/Cores)*Cores
@@ -147,7 +149,7 @@ metric.distance.apl <-  function(Network,probability=0.95,error=0.03,
 
   #/Full APL
   if (full.apl==TRUE){
-    s <- round((N/Cores))*Cores
+    s <- floor(N/Cores)*Cores
     S1 <- matrix(nrow=s,ncol=2)
     s1 <- sample(x,s,replace=FALSE); S1[,1] <- s1
     s1 <- sample(x,s,replace=FALSE); S1[,2] <- s1
@@ -164,11 +166,5 @@ metric.distance.apl <-  function(Network,probability=0.95,error=0.03,
   registerDoParallel(cl, cores = Cores)
   Paths <- parLapply(cl=cl,S,Shortest.path.big,network=Network)
 
-
-  ##/Calculate APL (change here to median/max/min for Cristian!)
-  Paths <- mean(unlist(Paths))
-
-  ##/Return final output
-  return(Paths)
-
+  return(mean(unlist(Paths)))
 }

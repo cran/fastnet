@@ -4,8 +4,14 @@
 \alias{metric.distance.effdia}
 \title{Effective Diameter}
 \usage{
-metric.distance.effdia(Network, probability = 0.95, error = 0.03,
-  effective_rate = 0.9, Cores = detectCores(), full = TRUE)
+metric.distance.effdia(
+  Network,
+  probability = 0.95,
+  error = 0.03,
+  effective_rate = 0.9,
+  Cores = detectCores(),
+  full = TRUE
+)
 }
 \arguments{
 \item{Network}{The input network.}

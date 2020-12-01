@@ -4,7 +4,7 @@
 \alias{net.rewired.caveman}
 \title{Rewired (Connected) Caveman Network}
 \usage{
-net.rewired.caveman(nc, m, p)
+net.rewired.caveman(nc, m, p, seed = 99)
 }
 \arguments{
 \item{nc}{Number of cliques (or caves) in the network.}
@@ -12,6 +12,8 @@ net.rewired.caveman(nc, m, p)
 \item{m}{Number of nodes per clique.}
 
 \item{p}{Link rewiring probability.}
+
+\item{seed}{A random seed.}
 }
 \value{
 A list containing the nodes of the network and their respective neighbors.

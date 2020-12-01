@@ -5,6 +5,7 @@
 #' @param p Connecting probability.
 #' @param ncores Number of cores, by default \code{detectCores()} from \code{parallel}.
 #' @param d A logical value determining whether is a network directed (default) or indirected.
+
 #' @details In this (simplest) random network, each edge is formed at random with a constant probability.
 #' When \code{d = TRUE} is a directed network.
 #' @return A list containing the nodes of the network and their respective neighbors.
@@ -17,7 +18,6 @@
 #' @export
 #' @references Erdos, P. and Renyi, A., On random graphs, Publicationes Mathematicae 6, 290-297 (1959).
 
-
 net.erdos.renyi.gnp <- function(n, p, ncores = detectCores(), d = TRUE){
 
   if ( n < 0 | n%%1!=0 )
@@ -26,15 +26,14 @@ net.erdos.renyi.gnp <- function(n, p, ncores = detectCores(), d = TRUE){
     stop("Parameter 'p' must be in (0,1)", call. = FALSE)
   if ( !ncores%%1 == 0 )
     stop("Parameter 'ncores' must be integer", call. = FALSE)
-  if ( ncores > detectCores() | ncores < 2 )
-    stop("Parameter 'ncores' is lower than 2 or exceed number of available cores", call. = FALSE)
-  if ( n < detectCores() )
-    stop("Parameter 'n' should not be too small", call. = FALSE)
+  #if ( ncores > detectCores() | ncores < 2 )
+    #stop("Parameter 'ncores' is lower than 2 or exceed number of available cores", call. = FALSE)
+  if ( ncores > detectCores() )
+    stop("Parameter 'ncores'  exceeds the max number of available cores", call. = FALSE)
 
   cl <- makeCluster(ncores)
   on.exit(stopCluster(cl))
-  registerDoParallel(cl, cores = ncores)
-
+  clusterSetRNGStream(cl,123)
   if (d == TRUE){
 
     # create n sequential nodes
@@ -83,7 +82,7 @@ net.erdos.renyi.gnp <- function(n, p, ncores = detectCores(), d = TRUE){
     }
     i<-NULL
     # parallel compute and save the indegree neighbors information to *neilist_from*
-    neilist_from <- foreach(i = 1:ncores, .combine='cfun') %dopar% nei_from(i)
+    neilist_from <- foreach(i = 1:ncores, .combine='cfun') %do% nei_from(i)
     ## combine the outdegree- and indegree- neighbor lists
     Network <- mapply(c, neilist_to, neilist_from, SIMPLIFY = FALSE)
     Network

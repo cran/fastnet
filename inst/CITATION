@@ -1,0 +1,21 @@
+bibentry(bibtype = "Article",
+  title        = "{fastnet}: An {R} Package for Fast Simulation and Analysis of Large-Scale Social Networks",
+  author       = c(person(given = "Xu",
+                          family = "Dong",
+                          email = "dongxu099@gmail.com"),
+                   person(given = "Luis",
+                          family = "Castro",
+                          email = "l.castro6@umiami.edu"),
+                   person(given = "Nazrul",
+                          family = "Shaikh",
+                          email = "nazrul@gmail.com")),
+  journal      = "Journal of Statistical Software",
+  year         = "2020",
+  volume       = "96",
+  number       = "7",
+  pages        = "1--23",
+  doi          = "10.18637/jss.v096.i07",
+
+  header       = "To cite fastnet in publications use:"
+)
+

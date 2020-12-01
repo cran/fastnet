@@ -4,8 +4,13 @@
 \alias{metric.distance.mpl}
 \title{Median Path Length}
 \usage{
-metric.distance.mpl(Network, probability = 0.95, error = 0.03,
-  Cores = detectCores(), full = FALSE)
+metric.distance.mpl(
+  Network,
+  probability = 0.95,
+  error = 0.03,
+  Cores = detectCores(),
+  full = FALSE
+)
 }
 \arguments{
 \item{Network}{The input network.}
